@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     #mine
     'products',
+    'pages',
 ]
 
 MIDDLEWARE = [
