@@ -3,7 +3,25 @@
 {% block content %}
     <h1>About us</h1>
     <p>Information will be provided once the site has finished construction</p>
+    
+    {{ my_html| safe }}
+   
     <p>
         {{ my_text }}, {{ my_number }}, {{my_list}}
     </p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <ul>
+    {% for item in my_list %}  
+        {% if item == 312 %}
+            <li>{{ forloop.counter}} - {{item|add:22}}</li>
+        {% elif item == "Abc" %}
+            <li>This is not the correct network</li> 
+        {% else %}
+            <li> {{forloop.counter}} - {{item}}</li>
+        {% endif %}
+    {% endfor %}
 {% endblock %}
