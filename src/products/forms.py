@@ -28,7 +28,7 @@ class ProductForm(forms.ModelForm):
 
     def clean_email(self, *args, **kwargs):
         email = self.cleaned_data.get("email")
-        if not email.contains("@"):
+        if not email:
             raise forms.ValidationError("Not a valid email")
         return title
 
