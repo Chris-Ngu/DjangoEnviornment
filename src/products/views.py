@@ -16,13 +16,12 @@ from .forms import ProductForm, RawProductForm
 #  return render(request, "products/product_create.html", context)
 
 def product_create_view(request):
-  form = RawProductForm()
-  if request.method == "POST":
-    form = RawProductForm(request.POST)
-    if form.is_valid():
-      Product.objects.create(**form.cleaned_data)
-    else:
-      print(form.errors)
+  form = ProductForm(request.POST or None)
+  if form.is_valid():
+    form.save()
+    form = ProductForm()
+
+  obj = Product.objects.get(id=1)
   context = {
     'form': form
   }
