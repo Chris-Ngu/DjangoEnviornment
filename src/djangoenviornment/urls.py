@@ -7,6 +7,7 @@ from products.views import (
     render_initial_data,
     dynamic_lookup_view,
     product_delete_view,
+    product_list_view,
 )
 
 urlpatterns = [
@@ -14,9 +15,11 @@ urlpatterns = [
     path('contact/', contact_view),
     path('',home_view),
     path('about/', about_view),
-    path('product/', product_detail_view),
     path('create/', product_create_view),
     path('product/<int:id>/', dynamic_lookup_view, name='product'),
     path('product/<int:id>/delete', product_delete_view, name='product-delete'),
+    path('product/', product_list_view, name='product-list'),
 ]
+
+#path('product/', product_detail_view)
 
