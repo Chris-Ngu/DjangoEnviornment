@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> {{ Article.title }} - {{Article.date}}</h1>
+<p>Abstract: {{Article.abstract}}</p>
+<b>{{Article.body}}</b>
+
+{% endblock %}

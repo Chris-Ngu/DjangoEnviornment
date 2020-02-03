@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #mine
     'products',
     'pages',
+    'Blog',
 ]
 
 MIDDLEWARE = [
