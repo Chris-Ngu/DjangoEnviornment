@@ -8,5 +8,5 @@ from .views import (
 app_name = 'Blog'
 urlpatterns = [
     path('', article_list_view, name='article-list'),
-    path('<str:title>/', article_detail_view, name='article-detail'),
+    path('<int:id>/', article_detail_view, name='article-detail'), #cannot be str:title
 ]
