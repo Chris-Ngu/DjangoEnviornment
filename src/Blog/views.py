@@ -10,6 +10,12 @@ from django.views.generic import(
     DeleteView
 )
 
+class ArticleCreateView(CreateView):
+    template_name = 'Blog/article_create.html'
+    #model = Article
+    form_class = ArticleForm
+    queryset = Article.objects.all()
+
 class ArticleDetailView(DetailView):
     #template_name = 'Blog/article_detail.html
     #queryset = Article.objects.all()

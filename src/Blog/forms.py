@@ -2,9 +2,9 @@ from django import forms
 from .models import Article
 
 class ArticleForm(forms.ModelForm):
-    class meta:
+    class Meta:
         model = Article
-        field = [
+        fields = [
             'title',
             'date',
             'abstract',
