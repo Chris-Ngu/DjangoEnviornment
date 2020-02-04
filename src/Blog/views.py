@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+pfrom django.shortcuts import render, get_object_or_404
 from .models import Article
 from .forms import ArticleForm
 from django.views.generic import(
@@ -9,6 +9,13 @@ from django.views.generic import(
     ListView,
     DeleteView
 )
+
+#WIP, needs revision
+class ArticleDeleteView(DeleteView):
+    def get_object(self):
+        id = self.kwargs.get("id")
+        obj = get_object_or_404(Article, id=id)
+        obj.delete()
 
 class ArticleCreateView(CreateView):
     template_name = 'Blog/article_create.html'
