@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
+from django.views import View
 from django.urls import reverse
 from .models import Article
+#from .models import Course
 from .forms import ArticleForm
 from django.views.generic import(
     CreateView,
@@ -39,6 +41,16 @@ class ArticleListView(ListView):
     #template_name = 'Blog/article_list.html    This is to overwrite generic path
     queryset = Article.objects.all()            #Blog/<model>_list.html
 
+#----- function view coverting to classed based view ----------
+#class CourseDetailView(View):
+#   template_name = 'courses/course_detail.html'
+#   def get(self, request, id=None, *args, **kwargs):
+#       context = {}
+#       if id is not None:
+#           obj = get_object_or_404(Course, id=id)
+#           context['object'] = obj
+#       return render(request, self.template_name, context)
+#
 #-------------- function based views below --------------------   
 #   To reimplement, need to change the url paths
 #def article_list_view(request):

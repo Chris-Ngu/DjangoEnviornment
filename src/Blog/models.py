@@ -11,3 +11,8 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse("Blog:article-detail", kwargs={"id": self.id})
+
+
+#----------- raw detail class based view ------
+#class Course(model.Model):
+#    title = models.CharField(max_length=120)
